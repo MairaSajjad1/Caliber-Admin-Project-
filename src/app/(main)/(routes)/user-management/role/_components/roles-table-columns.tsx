@@ -3,7 +3,6 @@
 import { HeaderCell } from "@/components/ui/table";
 import { Tooltip } from "@/components/ui/tooltip";
 import { ActionIcon } from "@/components/ui/action-icon";
-import DeletePopover from "./delete-popover";
 import { EyeIcon, PencilIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -75,11 +74,6 @@ export const getColumns = ({
             <EyeIcon className="h-3.5 w-3.5" />
           </ActionIcon>
         </Tooltip>
-        <DeletePopover
-          title={`Delete Role`}
-          description={`Please, rethink about your decision because you will not be able to undo this?`}
-          onDelete={() => onDeleteItem(row.id)}
-        />
       </div>
     ),
   },

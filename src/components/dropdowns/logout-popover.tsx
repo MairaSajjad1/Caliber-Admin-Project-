@@ -4,20 +4,17 @@ import { Title, Text } from "@/components/ui/text";
 import { ActionIcon } from "@/components/ui/action-icon";
 import { Button } from "@/components/ui/button";
 import { Popover } from "@/components/ui/popover";
-import { PiTrashFill } from "react-icons/pi";
-import { TrashIcon } from "lucide-react";
+import { TbLogout2 as LogoutIcon } from "react-icons/tb"; // Assuming this is your logout icon
 
-type DeletePopoverProps = {
+type LogoutPopoverProps = {
   title: string;
   description: string;
-  onDelete: () => void;
 };
 
-export default function DeletePopover({
+export default function LogoutPopover({
   title,
   description,
-  onDelete,
-}: DeletePopoverProps) {
+}: LogoutPopoverProps) {
   return (
     <Popover
       placement="left"
@@ -28,14 +25,14 @@ export default function DeletePopover({
             as="h6"
             className="mb-0.5 flex items-start text-sm text-gray-700 sm:items-center"
           >
-            <PiTrashFill className="me-1 h-[17px] w-[17px]" /> {title}
+            <LogoutIcon className="me-1 h-4 w-4" /> {title}
           </Title>
           <Text className="mb-2 leading-relaxed text-gray-500">
             {description}
           </Text>
           <div className="flex items-center justify-end">
-            <Button size="sm" className="me-1.5 h-7" onClick={onDelete}>
-              Yes
+            <Button size="sm" className="me-1.5 h-7">
+              yes
             </Button>
             <Button
               size="sm"
@@ -52,10 +49,10 @@ export default function DeletePopover({
       <ActionIcon
         size="sm"
         variant="outline"
-        aria-label={"Delete Item"}
+        aria-label={"Logout"}
         className="cursor-pointer hover:!border-gray-900 hover:text-gray-700"
       >
-        <TrashIcon className="h-3.5 w-3.5" />
+        <LogoutIcon className="h-3.5 w-3.5" />
       </ActionIcon>
     </Popover>
   );

@@ -1,7 +1,10 @@
 "use client";
 import { RefObject, useState } from "react";
 import { useMedia } from "@/hooks/use-media";
+import { Button } from "@/components/ui/button";
 import { Popover } from "../ui/popover";
+import { TbLogout2 as LogoutIcon } from "react-icons/tb";
+import LogoutPopover from "./logout-popover";
 
 function UserDropdown({
   setIsOpen,
@@ -9,9 +12,18 @@ function UserDropdown({
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <div className="w-72 max-w-[320px]  text-left rtl:text-right sm:max-w-[360px]  2xl:max-w-[420px]">
-      User Data Will be here
-    </div>
+    <div className="w-54 max-w-[320px] text-left rtl:text-right sm:max-w-[360px] 2xl:max-w-[420px]">
+  <div className="mb-1 "> User Name </div>
+  <div className="mb-1 ">User Type</div>
+  <span className="border-t border-gray-300 w-full"></span>
+  <div className="mb-2 font-bold flex items-center space-x-2">
+    <LogoutPopover
+      title={`Logout`}
+      description={`Are you sure you want to Logout ?`}
+    />
+    <button className="bg-black text-white px-3 py-1 rounded">Logout</button>
+  </div>
+</div>
   );
 }
 

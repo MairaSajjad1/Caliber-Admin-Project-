@@ -22,7 +22,7 @@ const AddRole = () => {
           "h-auto bg-[#01C4FF] shadow-button  hover:bg-[#01C4FF]/90"
         )}
       >
-        Add Permission
+        Edit Permission
       </Button>
     </div>
   );

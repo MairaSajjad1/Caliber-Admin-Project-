@@ -1,10 +1,13 @@
-import UsersTable from "./_components/user-table";
+import StatsCards from "./_components/stats-cards";
+import ActiveUsers from "./_components/active-users";
 
 const page = () => {
   return (
-    <div className="mt-2 @container space-y-4">
-      <UsersTable />
-    </div>
+    <>
+      <StatsCards />
+      <ActiveUsers />
+      {/* <Customers /> */}
+    </>
   );
 };
 
