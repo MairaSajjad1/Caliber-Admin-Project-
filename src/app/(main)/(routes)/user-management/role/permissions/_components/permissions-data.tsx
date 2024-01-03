@@ -16,7 +16,7 @@ const getRandomArrayElementt = (array: string | any[]) => array[Math.floor(Math.
 
 const avatarIdss = ["001", "002", "003", "004", "005"];
 const names = ["Alice", "Bob", "Charlie", "David", "Emma", "Frank", "Grace", "Henry", "Ivy", "Jack"];
-const permission = uuidv4();
+const permission = ["Alice", "Bob", "Charlie", "David", "Emma", "Frank", "Grace", "Henry", "Ivy", "Jack"];
 const generateRandomUser = () => {
   const id = uuidv4();
   const name = getRandomArrayElementt(names);
@@ -28,7 +28,7 @@ const generateRandomUser = () => {
     id,
     name,
     avatar,
-    permission
+    permission,
   };
 };
 

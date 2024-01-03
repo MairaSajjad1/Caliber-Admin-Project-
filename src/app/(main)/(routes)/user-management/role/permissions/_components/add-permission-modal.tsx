@@ -1,29 +1,27 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
-import { AddUserInput, userFormSchema } from "@/validators/add-user";
+import { AddRoleInput, roleFormSchema } from "@/validators/add-role";
 import { cn } from "@/utils";
-import { Input, Password } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
-const AddUserModal = () => {
+const AddRoleModal = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<AddUserInput>({
-    resolver: zodResolver(userFormSchema),
+  } = useForm<AddRoleInput>({
+    resolver: zodResolver(roleFormSchema),
     defaultValues: {
       name: "",
-      phoneNumber: "",
-      password: "",
     },
   });
 
-  const onSubmit = async (data: AddUserInput) => {
+  const onSubmit = async (data: AddRoleInput) => {
     console.log("data", data);
     try {
       setLoading((loading) => !loading);
@@ -34,7 +32,7 @@ const AddUserModal = () => {
   };
   return (
     <div className="m-auto px-5 py-7 sm:p-10 space-y-2">
-      <h4 className="text-center">Add New User</h4>
+      <h4 className="text-center">Add New Role</h4>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className={cn(
@@ -47,19 +45,6 @@ const AddUserModal = () => {
           {...register(`name`)}
           error={errors?.name?.message}
         />
-        <Input
-          label="Phone Number"
-          placeholder="Phone Number"
-          {...register(`phoneNumber`)}
-          error={errors?.phoneNumber?.message}
-        />
-        <Password
-          label="Password"
-          placeholder="Password"
-          {...register(`password`)}
-          error={errors?.password?.message}
-        />
-        {/* isLoading={isLoading} */}
         <Button
           className="bg-[#01C4FF] shadow-button active:bg-slate-100 focus:bg-slate-100 hover:bg-[#01C4FF]/90 active:bg-[#01C4FF]/90"
           type="submit"
@@ -72,4 +57,4 @@ const AddUserModal = () => {
   );
 };
 
-export default AddUserModal;
+export default AddRoleModal;

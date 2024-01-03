@@ -1,9 +1,9 @@
-import UsersTable from "./_components/order-table";
+import RolesTable from "./_components/permission-table";
 
 const page = () => {
   return (
     <div className="mt-2 @container space-y-4">
-      <UsersTable />
+      <RolesTable />
     </div>
   );
 };

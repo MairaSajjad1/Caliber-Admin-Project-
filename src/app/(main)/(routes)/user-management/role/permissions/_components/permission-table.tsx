@@ -4,13 +4,13 @@ import { useCallback, useState, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { useColumn } from "@/hooks/use-column";
 import { useTable } from "@/hooks/use-table";
-import { getColumns } from "./user-table-columns";
+import { getColumns } from "./permission-table-columns";
 import ControlledTable from "@/components/controlled-table";
-import { userData } from "./user-data";
+import { userData } from "./permissions-data";
 import isEmpty from "lodash/isEmpty";
-import AddUser from "./add-user";
+import AddRole from "./add-permission";
 
-const UserTableFilters = dynamic(() => import("./user-table-filters"), {
+const RoleTableFilters = dynamic(() => import("./permission-table-filters"), {
   ssr: false,
 });
 
@@ -19,7 +19,7 @@ const TableFilter = dynamic(
   { ssr: false }
 );
 
-export default function ShipmentTable() {
+export default function RolesTable() {
   const [pageSize, setPageSize] = useState(10);
 
   const onHeaderCellClick = (value: string) => ({
@@ -62,7 +62,7 @@ export default function ShipmentTable() {
   return (
     <>
       <div className="flex items-center justify-between gap-2 mb-2">
-        <h3>{"Users"}</h3>
+        <h3>Permissions</h3>
         {!isEmpty({
           searchTerm,
           onSearchClear: () => {
@@ -92,7 +92,7 @@ export default function ShipmentTable() {
             }}
           >
             {
-              <UserTableFilters
+              <RoleTableFilters
                 isFiltered={isFiltered}
                 filters={filters}
                 updateFilter={updateFilter}
@@ -101,7 +101,7 @@ export default function ShipmentTable() {
             }
           </TableFilter>
         )}
-        <AddUser />
+        <AddRole />
       </div>
       <ControlledTable
         variant="modern"

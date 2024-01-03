@@ -5,6 +5,7 @@ import { Tooltip } from "@/components/ui/tooltip";
 import { ActionIcon } from "@/components/ui/action-icon";
 import DeletePopover from "./delete-popover";
 import { EyeIcon, PencilIcon } from "lucide-react";
+import Link from "next/link";
 
 type Columns = {
   sortConfig?: any;
@@ -26,16 +27,15 @@ export const getColumns = ({
     width: 250,
   },
   {
-    title: <HeaderCell title="Mobile" />,
-    dataIndex: "mobile",
-    key: "mobile",
+    title: <HeaderCell title="View Permission" />,
+    dataIndex: "permission",
+    key: "permission",
     width: 250,
-  },
-  {
-    title: <HeaderCell title="Type" />,
-    dataIndex: "type",
-    key: "type",
-    width: 250,
+    render: (_: string, row: any) => (
+      <Link href={`/user-management/role/permissions`} className="text-black-500 hover:underline">
+        View Permission
+      </Link>
+    ),
   },
   {
     // Need to avoid this issue -> <td> elements in a large <table> do not have table headers.
@@ -47,7 +47,7 @@ export const getColumns = ({
       <div className="flex items-center justify-center gap-3">
         <Tooltip
           size="sm"
-          content={() => "Edit User"}
+          content={() => "Edit Role"}
           placement="top"
           color="invert"
         >
@@ -62,7 +62,7 @@ export const getColumns = ({
         </Tooltip>
         <Tooltip
           size="sm"
-          content={() => "View User"}
+          content={() => "View Role"}
           placement="top"
           color="invert"
         >

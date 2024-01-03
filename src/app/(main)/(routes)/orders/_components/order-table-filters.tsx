@@ -2,7 +2,7 @@
 
 import Select from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { userType } from "./user-data";
+import { userType } from "./order-data";
 import { PiTrashDuotone } from "react-icons/pi";
 import { useMedia } from "@/hooks/use-media";
 
