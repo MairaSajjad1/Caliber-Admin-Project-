@@ -21,6 +21,7 @@ type CardTypes = {
   chartClassName?: string;
   className?: string;
   data: ChartData;
+  
 };
 
 export default function Card({

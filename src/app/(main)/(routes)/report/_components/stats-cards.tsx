@@ -1,4 +1,6 @@
+import React from "react";
 import Card from "./card";
+import Link from "next/link";
 
 const filesStatData = [
   {
@@ -361,7 +363,30 @@ const StatsCards = () => {
   return (
     <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4 lg:gap-8">
       {filesStatData.map((stat) => {
-        return <Card key={stat.id} data={stat}></Card>;
+        // Generate dynamic link based on card title
+        let link = "";
+        switch (stat.title.toLowerCase()) {
+          case "orders":
+            link = "/report/orderReport";
+            break;
+          case "users":
+            link = "/report/userReport";
+            break;
+          case "categories":
+            link = "/report/categoryReport";
+            break;
+          case "products":
+            link = "/report/productReport";
+            break;
+          default:
+            link = "";
+        }
+
+        return (
+          <Link href={link} key={stat.id}>
+            <Card data={stat} />
+          </Link>
+        );
       })}
     </div>
   );
