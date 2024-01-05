@@ -62,7 +62,7 @@ export default function ShipmentTable() {
   return (
     <>
       <div className="flex items-center justify-between gap-2 mb-2">
-        <h3>{"Purchase"}</h3>
+        <h3>{"Product List"}</h3>
         {!isEmpty({
           searchTerm,
           onSearchClear: () => {

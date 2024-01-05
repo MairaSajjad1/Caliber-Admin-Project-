@@ -65,11 +65,11 @@ export const getColumns = ({
       <div className="flex items-center justify-center gap-3">
         <Tooltip
           size="sm"
-          content={() => "Edit Purchase"}
+          content={() => "Edit Product"}
           placement="top"
           color="invert"
         >
-          <Link href={`/products/purchase/create`}>
+          <Link href={`/products/productList/create`}>
               <ActionIcon
                 tag="span"
                 size="sm"
@@ -82,7 +82,7 @@ export const getColumns = ({
         </Tooltip>
         <Tooltip
           size="sm"
-          content={() => "View Purchase"}
+          content={() => "View User"}
           placement="top"
           color="invert"
         >
@@ -96,7 +96,7 @@ export const getColumns = ({
           </ActionIcon>
         </Tooltip>
         <DeletePopover
-          title={`Delete Purchase`}
+          title={`Delete User`}
           description={`Are you sure you want to delete this #{row.id} User?`}
           onDelete={() => onDeleteItem(row.id)}
         />

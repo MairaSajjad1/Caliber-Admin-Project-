@@ -59,6 +59,12 @@ const items = [
   },
   {
     id: "e63a2b52-3032-47c3-84b4-5a96e959bd90",
+    title: "ProductList",
+    parentId: "0a7043c4-a802-41a0-b1eb-a716158e5da4",
+    href: "/products/productList",
+  },
+  {
+    id: "e63a2b52-3032-47c3-84b4-5a96e959bd90",
     title: "Brand",
     parentId: "0a7043c4-a802-41a0-b1eb-a716158e5da4",
     href: "/products/brand",
@@ -73,13 +79,13 @@ const items = [
     id: "953cad57-6802-4c02-8702-88658dd3e767",
     title: "Variation",
     parentId: "0a7043c4-a802-41a0-b1eb-a716158e5da4",
-    href: "/products/purchase",
+    href: "/products/variation",
   },
   {
     id: "95f1bdc1-7201-41ec-a521-eb8a9e878985",
     title: "Purchase",
     parentId: "0a7043c4-a802-41a0-b1eb-a716158e5da4",
-    href: "/products/units",
+    href: "/products/purchase",
   },
   {
     id: "fe12db6a-5bbe-4896-8b1a-3605d221ebfb",

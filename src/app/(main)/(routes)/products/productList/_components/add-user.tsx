@@ -9,7 +9,7 @@ const AddUser = () => {
   const router = useRouter();
   
   const handleButtonClick = () => {
-    router.push("/products/purchase/create");
+    router.push("/products/productList/create");
   };
 
   return (
@@ -20,7 +20,7 @@ const AddUser = () => {
           "h-auto bg-[#01C4FF] shadow-button  hover:bg-[#01C4FF]/90"
         )}
       >
-        Add Purchase
+        Add Product
       </Button>
     </div>
   );
